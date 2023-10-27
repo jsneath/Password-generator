@@ -89,7 +89,35 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+var userInput = prompt("How long would you like your password to be?");
+
+getPasswordOptions()
+
 function getPasswordOptions() {
+
+  if (userInput < 8 || userInput > 128) {
+    alert("The password must be at least 8 characters but no more than 128")
+    } else {
+      let lowerCase = confirm("Would you like lowerCase?");
+      if (lowerCase == true) {
+      alert("you done something right")
+    }
+  }
+
+  let upperCase = confirm("Would you like uppercase letters?")
+  if (upperCase == true) {
+    alert("you added uppercase letter")
+  }
+  
+  let numericValue = confirm("Would you like numeric characters?")
+  if (numericValue == true) {
+    alert("you added numeric values")
+  }
+  
+  let specialChar = confirm("Would you like special characters")
+  if (specialChar == true) {
+    alert("you added special character")
+  }
 
 }
 
@@ -100,7 +128,11 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
+// get the password options
+// connect all the arrays that the user wants to use
+// get random one
 
+return "It works!"
 }
 
 // Get references to the #generate element

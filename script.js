@@ -90,7 +90,8 @@ var upperCasedCharacters = [
 
 // Function to prompt user for password options
 var newArray = []
-var userInput = prompt("How long would you like your password to be?");
+var randomChar = []
+var userInput = parseInt(prompt("How long would you like your password to be?"));
 
 getPasswordOptions()
 
@@ -113,7 +114,6 @@ function getPasswordOptions() {
     
   }
  
-  
   let numericValue = confirm("Would you like numeric characters?")
   if (numericValue == true) {
     newArray.push(...numericCharacters)
@@ -124,28 +124,30 @@ function getPasswordOptions() {
     newArray.push(...specialCharacters)
   } 
   
-  
-  // if(newArray.length == 0){
-  //   alert("You must select at least 1 character type")
-  //   getPasswordOptions()
-  // }
-
 }
-console.log(newArray)
 
-// Function for getting a random element from an array
+// Function for getting a random element from an array and push to randomchar
 function getRandom(arr) {
 
+  let randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 }
+getRandom(newArray)
 
 // Function to generate password with user input
 function generatePassword() {
+  var password = "";
+  for(let i = 0; i < userInput; i++){
+    password += (getRandom(newArray))
+  }
+return password
 // get the password options
 // connect all the arrays that the user wants to use
 // get random one
 
-return "It works!"
 }
+console.log(generatePassword())
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector('#generate');

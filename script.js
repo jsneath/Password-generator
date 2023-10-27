@@ -89,9 +89,12 @@ var upperCasedCharacters = [
 ];
 
 // Function to prompt user for password options
+var newArray = []
 var userInput = prompt("How long would you like your password to be?");
 
 getPasswordOptions()
+
+
 
 function getPasswordOptions() {
 
@@ -100,26 +103,35 @@ function getPasswordOptions() {
     } else {
       let lowerCase = confirm("Would you like lowerCase?");
       if (lowerCase == true) {
-      alert("you done something right")
+      newArray.push(...lowerCasedCharacters)
     }
   }
 
   let upperCase = confirm("Would you like uppercase letters?")
   if (upperCase == true) {
-    alert("you added uppercase letter")
+    newArray.push(...upperCasedCharacters)
+    
   }
+ 
   
   let numericValue = confirm("Would you like numeric characters?")
   if (numericValue == true) {
-    alert("you added numeric values")
-  }
-  
-  let specialChar = confirm("Would you like special characters")
-  if (specialChar == true) {
-    alert("you added special character")
+    newArray.push(...numericCharacters)
   }
 
+  let specialChar = confirm("Would you like special characters")
+  if (specialChar == true) {
+    newArray.push(...specialCharacters)
+  } 
+  
+  
+  // if(newArray.length == 0){
+  //   alert("You must select at least 1 character type")
+  //   getPasswordOptions()
+  // }
+
 }
+console.log(newArray)
 
 // Function for getting a random element from an array
 function getRandom(arr) {

@@ -95,8 +95,6 @@ var userInput = parseInt(prompt("How long would you like your password to be?"))
 
 getPasswordOptions()
 
-
-
 function getPasswordOptions() {
 
   if (userInput < 8 || userInput > 128) {
@@ -111,7 +109,6 @@ function getPasswordOptions() {
   let upperCase = confirm("Would you like uppercase letters?")
   if (upperCase == true) {
     newArray.push(...upperCasedCharacters)
-    
   }
  
   let numericValue = confirm("Would you like numeric characters?")
@@ -119,11 +116,18 @@ function getPasswordOptions() {
     newArray.push(...numericCharacters)
   }
 
-  let specialChar = confirm("Would you like special characters")
+  let specialChar = confirm("Would you like special characters?")
   if (specialChar == true) {
     newArray.push(...specialCharacters)
   } 
-  
+
+  if (newArray.length == 0) {
+    alert("You must select at least 1 character type");
+    getPasswordOptions(); 
+  } else {
+    writePassword();  
+    }
+
 }
 
 // Function for getting a random element from an array and push to randomchar

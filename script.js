@@ -124,6 +124,7 @@ function getPasswordOptions() {
   if (newArray.length == 0) {
     alert("You must select at least 1 character type");
     getPasswordOptions(); 
+
   } else {
     writePassword();  
     }
@@ -150,7 +151,7 @@ return password
 // get random one
 
 }
-console.log(generatePassword())
+// console.log(generatePassword())
 
 
 // Get references to the #generate element
